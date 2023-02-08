@@ -11,16 +11,16 @@ const reIndex = () => {
 // remove an element
 
 window.deletebtn = (index) => {
-  delet = () => {
-    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    const result = tasks.filter((item) => item.index !== index);
-    const newtasks = result;
-    for (let i = 0; i < newtasks.length; i += 1) {
-      newtasks[i].index = i + 1;
-    }
-    localStorage.setItem('tasks', JSON.stringify(newtasks));
-    window.location.reload();
-  };
+  // const delet = () => {
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  const result = tasks.filter((item) => item.index !== index);
+  const newtasks = result;
+  for (let i = 0; i < newtasks.length; i += 1) {
+    newtasks[i].index = i + 1;
+  }
+  localStorage.setItem('tasks', JSON.stringify(newtasks));
+  window.location.reload();
+  // };
 };
 
 // checket
@@ -31,4 +31,4 @@ window.checkboxx = (i) => {
   } else { tasks[i].Completed = false; }
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
-module.exports = delet;
+module.exports = reIndex;
